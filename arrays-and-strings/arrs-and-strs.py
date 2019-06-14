@@ -29,7 +29,10 @@ def unique_chars1(string):
     
     return True
 
-#SOLUTION 2 - IN-PLACE SORT
+
+# SOLUTION 2 - IN-PLACE SORT
+# Efficiency
+# space: O(1)  time: O(2n log n)
 
 def unique_chars2(string):
 
