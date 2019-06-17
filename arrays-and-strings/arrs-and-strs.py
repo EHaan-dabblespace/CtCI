@@ -120,6 +120,43 @@ def permutuation_ht(str1, str2):
     return True
 
 
+"""
+1.3
+Write a method to replace all spaces in a string with '%20'.
+Assume that the string has sufficient space at the end to hold the additional characters,
+and that you are given the "true" length of the string.
+
+Examples
+--------
+input: 'Mr John Smith    ' '13'
+output: 'Mr%20John%20Smith%20'
+
+"""
+
+# SOLUTION - SHIFT & REPLACE FROM END
+# Efficiency
+# space: O(n)  time: O(n)
+
+def urlify(string, num):
+
+    string = list(string)
+    r = len(string) - 1
+
+    for i in range(num -1, -1, -1):
+
+      if string[i] != ' ':
+          string[r] = string[i]
+          r -= 1
+
+      else:
+          string[r] = '0'
+          string[r-1] = '2'
+          string[r-2] = '%'
+          r -= 3
+
+    return ''.join(string)
+
+
 
 
 
@@ -134,7 +171,7 @@ if __name__ == "__main__":
     # print(unique_chars2(string2))
     # print(unique_chars2(string2))
 
-    #Tests 2.1
+    #Tests 1.2
     # string1 = 'listen'
     # string2 = 'silent'
     # string1 = 'loot'
@@ -146,3 +183,9 @@ if __name__ == "__main__":
     # string1 = 'loot'
     # string2 = 'tools'
     # print(permutuation_ht(string1, string2))
+
+    # Tests 1.3
+    # phrase = 'Evy Haan  '
+    # phrase = 'a b c    '
+    # length = 5
+    # print(urlify(phrase, length))
