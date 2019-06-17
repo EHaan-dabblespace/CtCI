@@ -162,28 +162,7 @@ def urlify(string, num):
 
 
 
-if __name__ == "__main__":
-    # Tests 1.1
-    # string1 = 'string'
-    # string2 = 'unique'
-    # print(unique_chars1(string1))
-    # print(unique_chars1(string1))
-    # print(unique_chars2(string2))
-    # print(unique_chars2(string2))
-
-    #Tests 1.2
-    # string1 = 'listen'
-    # string2 = 'silent'
-    # string1 = 'loot'
-    # string2 = 'tool'
-    # string1 = 'listens'
-    # string2 = 'silent'
-    # string1 = 'loot'
-    # string2 = 'look'
-    # string1 = 'loot'
-    # string2 = 'tools'
-    # print(permutuation_ht(string1, string2))
-
+# if __name__ == "__main__":
     # Tests 1.3
     # phrase = 'Evy Haan  '
     # phrase = 'a b c    '
