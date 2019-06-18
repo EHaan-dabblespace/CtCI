@@ -9,20 +9,19 @@ What if a temporary buffer is not allow?
 # space: O(n)  time: O(n)
 
 def remove_dups_ht(sll):
-    d = {}
-    c = sll
-    l = sll
+    d = {sll.head.val:True}
+    c = sll.head.nxt
+    l = sll.head
 
     while c:
-
-        if c.val in d:
+        if c.val in d.keys():
             l.nxt = c.nxt
+            c.nxt = None
             c = l.nxt
         else:
             d[c.val] = True
             c = c.nxt
             l = l.nxt
-    
     return sll
 
 
