@@ -1,5 +1,5 @@
 from utils import LinkedListNode, LinkedList
-from linked_lists import remove_dups_ht
+from linked_lists import *
 
 
 # Class Tests
@@ -54,9 +54,8 @@ def test_linked_List_instantiation_order():
     expected = '<LinkedList: {}>'.format(order)
     assert expected == actual
 
+
 # 2.1
-
-
 def test_remove_dups_ht():
     sll = LinkedList([1, 1])
     nsll = remove_dups_ht(sll)
@@ -73,9 +72,43 @@ def test_remove_dups_ht_one_dup():
     assert expected == actual
 
 
-def test_remove_dups_ht_one_dup():
+def test_remove_dups_ht_double_dup():
     sll = LinkedList([3, 4, 3, 1, 1, 2])
     nsll = remove_dups_ht(sll)
     actual = repr(sll)
     expected = '<LinkedList: [2, 1, 3, 4]>'
+    assert expected == actual
+
+
+# 2.1 Solution 2
+def test_remove_dups_scout():
+    sll = LinkedList([1,1])
+    nsll = remove_dups_scout(sll.head)
+    actual = repr(sll)
+    expected = '<LinkedList: [1]>'
+    assert expected == actual
+
+
+def test_remove_dups_scout_one_dup():
+    sll = LinkedList([1,1,2])
+    nsll = remove_dups_scout(sll.head)
+    actual = repr(sll)
+    expected = '<LinkedList: [2, 1]>'
+    assert expected == actual
+
+
+def test_remove_dups_scout_double_dup():
+    sll = LinkedList([3,4,3,1,1,2])
+    nsll = remove_dups_scout(sll.head)
+    actual = repr(sll)
+    expected = '<LinkedList: [2, 1, 3, 4]>'
+    assert expected == actual
+
+
+# 2.2
+def test_kth_to_last_last():
+    sll = LinkedList([6,7,8,9])
+    num = 1
+    actual = repr(kth_to_last(sll.head, num))
+    expected = '<LinkedListNode: [9]'
     assert expected == actual

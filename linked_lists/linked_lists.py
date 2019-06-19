@@ -58,7 +58,7 @@ Find the kth to the last element of a singly linked list.
 # EFFICIENCY
 # space: O(1)  time: O(n)
 
-def kth_to_last(sll):
+def kth_to_last(sll, k):
     s = sll
 
     while k > 0:
